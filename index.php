@@ -14,6 +14,10 @@ try {
             $sql = $db->prepare("DELETE FROM todo WHERE id=?");
             $sql->execute([$id]);
             header("location:./index.php");
+        }else {
+            $sql = $db->prepare("UPDATE todo SET done = 1-done WHERE id = ?");
+            $sql->execute([$id]);
+            header("location:./index.php");
         }
     }
 } catch (PDOException $e) {
