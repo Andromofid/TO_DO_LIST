@@ -1,6 +1,6 @@
 <?php
 try {
-    $db = new PDO("mysql:host=localhost;dbname=todolist", "root", "Youssefwac2003");
+    $db = new PDO("mysql:host=localhost;dbname=todolist", "root", "");
     $sql = $db->prepare("SELECT * FROM todo");
     $sql->execute();
     $taches  = $sql->fetchAll();
